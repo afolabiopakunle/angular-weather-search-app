@@ -1,0 +1,26 @@
+<div class="container-fluid mt-5 mb-5">
+    <div class="row my-5">
+        <div class="col-md-6 my-5">
+            <h2 class="text-center">Angular Weather Search-App</h2>
+            <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
+                <div class="form-group">
+                    <input class="form-control" id="weatherLocation" placeholder="Input a Location" type="text"
+                        aria-describedby="weatherLocation" formControlName="location">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary btn-lg">Search Location Weather</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 mt-5">
+            <h4 class="">Weather Details: <span
+                    class="float-right bg-success px-3 py-1">{{ this.weatherData?.location.name }}</span></h4>
+            <p>Temperature in Celcius: <span class="float-right">{{ this.weatherData?.current.temperature }}</span></p>
+            <p>Chance of Rain: <span class="float-right">{{ this.weatherData?.current.precip}} </span></p>
+            <p>Weather Description: <span
+                    class="float-right">{{ this.weatherData?.current.weather_descriptions[0] }}</span></p>
+            <p>Location Searched: <span class="float-right">{{ this.weatherData?.request.query }}</span></p>
+
+        </div>
+    </div>
+</div>

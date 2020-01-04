@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+* {
+  box-sizing: border-box;
+}
+input {
+  padding: 25px !important;
+}
+
+p {
+  padding: 1rem;
+  border-radius: 5px;
+}
+p:nth-child(even) {
+  background-color: azure;
+}
